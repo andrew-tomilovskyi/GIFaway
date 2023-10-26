@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppStyle" />
+
+    <style name="SearchText">
+        <item name="android:textColorHint">@color/slate_blue</item>
+        <item name="android:editTextColor">@color/primary</item>
+    </style>
+
+</resources>

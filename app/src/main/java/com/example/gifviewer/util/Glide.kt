@@ -14,3 +14,12 @@ fun glideSetGif(context: Context, url: String, view: ImageView) {
         .apply(RequestOptions().centerCrop())
         .into(view)
 }
+
+fun glideSetFullScreenGif(context: Context, url: String, view: ImageView) {
+    Glide.with(context)
+        .asGif()
+        .load(url)
+        .error(R.drawable.ic_placeholder_error)
+        .apply(RequestOptions().fitCenter())
+        .into(view)
+}

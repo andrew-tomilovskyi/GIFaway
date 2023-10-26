@@ -7,7 +7,22 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        tools:layout="@layout/fragment_home"
         android:name="com.example.gifviewer.presentation.fragments.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/go_to_gif_details_fragment"
+            app:destination="@id/gifDetailsFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gifDetailsFragment"
+        android:name="com.example.gifviewer.presentation.fragments.details.GifDetailsFragment"
+        android:label="GifDetailsFragment"
+        tools:layout="@layout/fragment_gif_details" />
 </navigation>

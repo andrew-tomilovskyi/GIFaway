@@ -15,30 +15,13 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
         android:inputType="text"
+        app:queryBackground="@color/transparent"
         app:queryHint="@string/hint_search"
         app:iconifiedByDefault="false"
         android:textAppearance="@style/SearchText"
         android:background="@drawable/bg_white_rounded_corners"
         app:layout_constraintTop_toTopOf="parent" />
-    <!--
-        <EditText
-            android:id="@+id/search_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/bg_white_rounded_corners"
-            android:drawableStart="@drawable/ic_search"
-            android:drawablePadding="8dp"
-            android:gravity="center_vertical"
-            android:hint="@string/hint_search"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:padding="8dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/slate_blue"
-            app:layout_constraintTop_toTopOf="parent" />
-    -->
+
     <androidx.core.widget.NestedScrollView
         android:id="@+id/container_nested_scroll"
         android:layout_width="match_parent"

@@ -7,4 +7,5 @@
     <color name="slate_blue">#688DA0</color>
     <color name="pale_blue">#EEF3FF</color>
     <color name="light_grey">#D9E2F3</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

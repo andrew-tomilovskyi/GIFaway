@@ -1,4 +1,4 @@
-package com.example.gifviewer.presentation.fragments.home
+package com.example.gifviewer.presentation.fragments
 
 import androidx.lifecycle.ViewModel
 import com.example.gifviewer.data.network.model.GiphyResponse
@@ -14,12 +14,13 @@ import retrofit2.Response
 import javax.inject.Inject
 
 @HiltViewModel
-class HomeViewModel @Inject constructor(
+class GifViewModel @Inject constructor(
     private val repository: RepositorySearch
 ) : ViewModel() {
 
-    private val searchQuery = MutableStateFlow("")
+    private val _selectedGifPosition = MutableStateFlow(-1)
 
+    private val searchQuery = MutableStateFlow("")
     @OptIn(ExperimentalCoroutinesApi::class)
     val result = searchQuery.filter { it.length > SEARCH_MIN_LENGTH }
         .flatMapLatest { query ->
@@ -32,6 +33,14 @@ class HomeViewModel @Inject constructor(
 
     fun setQuery(query: String) {
         searchQuery.value = query.trim()
+    }
+
+    fun setGifPosition(position: Int)  {
+        _selectedGifPosition.value = position
+    }
+
+    fun getSelectedPosition() : Int {
+        return _selectedGifPosition.value
     }
 
     private fun search(query: String): Flow<Response<GiphyResponse>> = flow {

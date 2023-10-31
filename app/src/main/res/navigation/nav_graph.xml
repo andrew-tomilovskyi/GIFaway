@@ -18,6 +18,14 @@
             app:launchSingleTop="true"
             app:popEnterAnim="@anim/wait_anim"
             app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/go_to_my_gifs_fragment"
+            app:destination="@id/myGifsFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
     </fragment>
 
     <fragment
@@ -25,4 +33,19 @@
         android:name="com.example.gifviewer.presentation.fragments.details.GifDetailsFragment"
         android:label="GifDetailsFragment"
         tools:layout="@layout/fragment_gif_details" />
+
+    <fragment
+        android:id="@+id/myGifsFragment"
+        tools:layout="@layout/fragment_home_no_internet"
+        android:name="com.example.gifviewer.presentation.fragments.myGifs.MyGifsFragment"
+        android:label="MyGifsFragment">
+        <action
+            android:id="@+id/go_to_home_fragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/wait_anim"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/wait_anim"
+            app:popExitAnim="@anim/slide_right" />
+    </fragment>
 </navigation>

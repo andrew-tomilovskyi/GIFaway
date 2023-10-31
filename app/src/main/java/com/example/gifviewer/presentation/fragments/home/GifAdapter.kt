@@ -8,16 +8,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.gifviewer.R
 import com.example.gifviewer.databinding.ItemFullScreenGifBinding
 import com.example.gifviewer.databinding.ItemGifBinding
+import com.example.gifviewer.models.MyGif
 import com.example.gifviewer.util.glideSetFullScreenGif
 import com.example.gifviewer.util.glideSetGif
 
 class GifAdapter(
-    private val onClick: ((Int) -> Unit)
+    private val onClick: ((Int) -> Unit)? = null
 ) : ListAdapter<GifAdapter.AdapterItem, RecyclerView.ViewHolder>(diffCallback) {
 
     sealed class AdapterItem {
-        data class GifItem(val url: String) : AdapterItem()
-        data class FullScreenGifItem(val url: String) : AdapterItem()
+        data class GifItem(val gif: MyGif) : AdapterItem()
+        data class FullScreenGifItem(val gif: MyGif) : AdapterItem()
     }
 
     inner class GifViewHolder(private val binding: ItemGifBinding) :
@@ -28,7 +29,7 @@ class GifAdapter(
             glideSetGif(gifImageView.context, url, gifImageView)
 
             root.setOnClickListener {
-                onClick(position)
+                onClick?.invoke(position)
             }
         }
     }
@@ -47,6 +48,7 @@ class GifAdapter(
                     ItemGifBinding.inflate(LayoutInflater.from(parent.context), parent, false)
                 GifViewHolder(binding)
             }
+
             R.layout.item_full_screen_gif -> {
                 val binding = ItemFullScreenGifBinding.inflate(
                     LayoutInflater.from(parent.context),
@@ -55,6 +57,7 @@ class GifAdapter(
                 )
                 FullScreenGifViewHolder(binding)
             }
+
             else -> throw IllegalArgumentException("Invalid view type")
         }
     }
@@ -62,10 +65,11 @@ class GifAdapter(
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (val item = getItem(position)) {
             is AdapterItem.GifItem -> {
-                (holder as GifViewHolder).bind(item.url, position)
+                (holder as GifViewHolder).bind(item.gif.image, position)
             }
+
             is AdapterItem.FullScreenGifItem -> {
-                (holder as FullScreenGifViewHolder).bind(item.url)
+                (holder as FullScreenGifViewHolder).bind(item.gif.image)
             }
         }
     }

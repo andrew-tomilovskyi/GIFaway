@@ -24,7 +24,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="/private/var/folders/f7/jnnt0y7s7xj96798lf5m_0180000gq/T/baseline_arrow_back_24.xml" />
+                                                <entry key="imagePath" value="/private/var/folders/f7/jnnt0y7s7xj96798lf5m_0180000gq/T/baseline_change_circle_24.xml" />
                                                 <entry key="opacityPercent" value="80" />
                                               </map>
                                             </option>
@@ -36,7 +36,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/arrow_back/baseline_arrow_back_24.xml" />
+                                                <entry key="url" value="file:$USER_HOME$/Library/Android/sdk/icons/material/materialicons/change_circle/baseline_change_circle_24.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -68,7 +68,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_back" />
+                                      <entry key="outputName" value="ic_load_more" />
                                       <entry key="theme" value="CUSTOM" />
                                       <entry key="themeColor" value="1f3c49" />
                                     </map>
